@@ -1,0 +1,362 @@
+ import igraph
+g = igraph.read('Net2.graphml')
+import igraph
+g = igraph.read('Net2.graphml')
+g.es['weight']=[1]*len(g.es)
+import paths
+paths.pair_partially_disjoint(g,0,22,0.9)
+import importlib
+importlib.reload(paths)
+paths.pair_partially_disjoint(g,0,22,0.9)
+importlib.reload(paths)
+paths.pair_partially_disjoint(g,0,22,0.9)
+
+paths.pair_partially_disjoint(g,0,17,0.9999)
+paths.pair_partially_disjoint(g,0,2,0.9)
+importlib.reload(paths)
+paths.av_aware_route(g,0,2,0.9)
+paths.av_aware_route(g,0,2,0.95)
+paths.av_aware_route(g,0,2,0.999)
+paths.av_aware_route(g,0,2,0.99925)
+paths.av_aware_route(g,0,2,0.99975)
+paths.av_aware_route(g,0,2,0.9999)
+importlib.reload(paths)
+paths.av_aware_route(g,0,2,0.9999)
+importlib.reload(paths)
+paths.av_aware_route(g,0,2,0.9999)
+paths.av_aware_route(g,0,2,0.99975)
+paths.av_aware_route(g,0,2,0.9999)
+paths.av_aware_route(g,0,2,0.99999)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,4,p)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,12,p)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,12,p,2)
+    paths.av_aware_route(g,0,12,p,depth =2)
+    paths.av_aware_route(g,0,12,p,2)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,12,p,2)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,12,p,2)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,12,p,depth =2)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,17,p)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,17,p, depth=2)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,17,p, depth=3)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,17,p, depth=4)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+importlib.reload(paths)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,17,p,depth=2)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,23,p,depth)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,0,23,p,)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    paths.av_aware_route(g,1,22,p,)
+for i in range(len(g.es)):
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+for i in range(len(g.es)):
+print("###### %d ######"%i)
+for i in range(len(g.es)):
+    print("###### %d ######"%i)
+    for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+        paths.av_aware_route(g,0,i,p,)
+for i in range(len(g.es)):
+    print("###### %d ######"%i)
+    for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+        paths.av_aware_route(g,9,i,p)
+importlib.reload(av_aware)
+import av_aware
+import scenarios
+scen, scen_p = scenarios.compute_scenarios(range(len(g.es)),g.es['a'])
+sum(scen_p)
+scen, scen_p = scenarios.compute_nh_scenarios(range(len(g.es)),g.es['a'])
+sum(scen_p)
+scen, scen_p = scenarios.compute_nh_scenarios(range(len(g.es)),g.es['a'],3)
+sum(scen_p)
+av_aware.online_ra(g, 0, 23, scen, [])
+scen_p = [ps*10000 for ps in scen_p]
+av_aware.online_ra(g, 0, 23, scen, scen_p, 0.99999*10000)
+p = av_aware.online_ra(g, 0, 23, scen, scen_p, 0.99999*10000)
+len(scen)
+scen, scen_p = scenarios.compute_nh_scenarios(range(len(g.es)),g.es['a'],2)
+len(scen)
+sum(scen_p)
+scen, scen_p = scenarios.compute_nh_scenarios(range(len(g.es)),g.es['a'],2,0.999)
+sum(scen_p)
+len(scen)
+scen, scen_p = scenarios.compute_nh_scenarios(range(len(g.es)),g.es['a'],2,0.9999)
+len(scen)
+sum(scen_p)
+scen_p = [ps*10000 for ps in scen_p]
+p = av_aware.online_ra(g, 0, 23, scen, scen_p, 0.99999*10000)
+p.solve()
+scen
+bin_s  =scenarios2bin(scen)
+bin_s  =scenarios.scenarios2bin(scen)
+bin_s[0]
+bin_s[1]
+bin_s[2]
+bin_s[6]
+bin_s[-1]
+importlib.reload(paths)
+paths.get_paths_surv([[0,1],[1,9]],scen)
+surv = paths.get_paths_surv([[0,1],[1,9]],scen)
+len(surv[0])
+len(surv[1])
+len([i for i in surv[1] if i in surv[0]])
+len(list(set(surv[0]+surv[1])))
+importlib.reload(paths)
+paths.pair_partially_disjoint_scens(g,0,22,0.9,scen,scen_p,)
+importlib.reload(paths)
+paths.pair_partially_disjoint_scens(g,0,22,0.9,scen,scen_p)
+g
+importlib.reload(paths)
+paths.pair_partially_disjoint_scens(g,0,22,0.9,scen,scen_p)
+importlib.reload(paths)
+paths.pair_partially_disjoint_scens(g,0,22,0.9,scen,scen_p)
+importlib.reload(paths)
+paths.pair_partially_disjoint_scens(g,0,22,0.9,scen,scen_p)
+paths.pair_partially_disjoint(g,0,22,0.9)
+paths.pair_partially_disjoint_scens(g,0,22,0.99999,scen,scen_p)
+a=g.es['a']
+a[1]*a[11]*a[20]*a[24]*a[30]*a[35]
+a2=(a[1]*a[11]*a[20]*a[24]*a[30]*a[35])
+(1-(1-a[0]*a[3])*(1-a[1]))*a[11]*a[20]*a[24]*a[30]*a[35]
+importlib.reload(paths)
+paths.pair_partially_disjoint_scens(g,0,22,0.99999,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.99999*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.9999*10000,scen,scen_p)
+importlib.reload(paths)
+paths.pair_partially_disjoint_scens(g,0,22,0.9999*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.99995*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.99999*10000,scen,scen_p)
+scen, scen_p = scenarios.compute_nh_scenarios(range(len(g.es)),g.es['a'],3,0.9999)
+scen_p = [ps*10000 for ps in scen_p]
+paths.pair_partially_disjoint_scens(g,0,22,0.99999*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.9999*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,2,0.9999*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,2,0.99999*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,2,0.999999*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,2,0.99999*10000,scen,scen_p)
+paths.pair_partially_disjoint(g,0,2,0.99999*10000,scen,scen_p)
+paths.pair_partially_disjoint(g,0,2,0.99999*10000)
+paths.pair_partially_disjoint(g,0,2,0.9999*10000)
+paths.pair_partially_disjoint(g,0,2,0.999*10000)
+paths.pair_partially_disjoint(g,0,2,0.99*10000)
+paths.pair_partially_disjoint(g,0,2,0.9*10000)
+paths.pair_partially_disjoint(g,0,2,0.9)
+paths.pair_partially_disjoint(g,0,2,0.99)
+paths.pair_partially_disjoint(g,0,2,0.999)
+paths.pair_partially_disjoint(g,0,2,0.9999)
+paths.pair_partially_disjoint(g,0,2,0.99999)
+paths.pair_partially_disjoint(g,0,2,0.999999)
+paths.pair_partially_disjoint(g,0,2,0.99999)
+paths.pair_partially_disjoint(g,0,22,0.99999)
+paths.pair_partially_disjoint(g,0,22,0.99995)
+paths.pair_partially_disjoint_scens(g,0,2,0.99995*10000,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.99995*10000,scen,scen_p)
+g.write_svg('n1.svg')
+g.write('n1.dot')
+bins
+bin_s
+bin_s[0]
+bin_s[1]
+scen[0]
+scen[1]
+750*18
+26000/3BBB
+len(sce)
+len(scen)
+scen, scen_p = scenarios.compute_nh_scenarios(range(len(g.es)),g.es['a'],3,0.999)
+len(scen)
+paths.pair_partially_disjoint_scens(g,0,22,0.99995,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.99,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,22,0.9,scen,scen_p)
+paths.pair_partially_disjoint_scens(g,0,2,0.9,scen,scen_p)
+scen_p = [ps*10000 for ps in scen_p]
+paths.pair_partially_disjoint_scens(g,0,2,0.9*10000,scen,scen_p)
+importlib.reload(paths)
+paths.av_aware_route(g,0,2,0.9*10000)
+scen_p
+scen_p[0]
+paths.av_aware_route(g,0,2,0.9*10000)
+paths.simple_path_finding(g,0,2,0.9*10000)
+paths.simple_path_finding(g,0,22,0.9*10000)
+paths.simple_path_finding(g,0,22,0.9*1000)
+paths.simple_path_finding(g,0,22,0.9*100)
+paths.simple_path_finding(g,0,22,0.9*10)
+paths.simple_path_finding(g,0,22,0.9*1)
+scen_p = [ps/10000 for ps in scen_p]
+paths.av_aware_route(g,0,2,0.9)
+paths.av_aware_route(g,0,22,0.9)
+paths.av_aware_route(g,0,22,0.99)
+paths.av_aware_route(g,0,22,0.999)
+paths.av_aware_route(g,0,22,0.9999)
+len(scn_p)
+len(scen_p)
+importlib.reload(paths)
+paths.av_aware_route(g,0,22,0.9999)
+importlib.reload(paths)
+paths.av_aware_route(g,0,22,0.9999)
+paths.av_aware_route_scens(g,0,22,0.9999)
+paths.av_aware_route_scen(g,0,22,0.9999,scen,scen_p)
+import time
+def fun():
+    start= time.time()
+    paths.av_aware_route_scen(g,0,22,0.9999,scen,scen_p)
+    end = time.time()
+    print (end-start)
+fun
+fun()
+def fun():
+    start= time.time()
+    paths.av_aware_route(g,0,22,0.9999)
+    end = time.time()
+    print (end-start)
+fun()(
+fun()
+run(expr):
+def run_f(expr):
+    start= time.time()
+    p=paths.av_aware_route(g,0,22,0.9999)
+    end = time.time()
+    print ("elapsed time: ", end-start)
+run_f("e")
+def run_f(expr):
+    start= time.time()
+    p=eval(expr)
+    end = time.time()
+    print ("elapsed time: ", end-start)
+    return p
+run_f("paths.av_aware_route(g,0,22,0.9999)")
+run_f("paths.av_aware_route_scen(g,0,22,0.9999,scen,scen_p)")
+run_f("paths.av_aware_route(g,0,22,0.99999)")
+run_f("paths.av_aware_route_scen(g,0,22,0.99999,scen,scen_p)")
+run_f("paths.av_aware_route(g,0,22,0.9)")
+run_f("paths.av_aware_route(g,0,2,0.9)")
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route(g,0,2,%f)"%p)
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route_scen(g,0,2,%f,scen,scen_p)"%p)
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route_scen(g,0,23,%f,scen,scen_p)"%p)
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route_scen(g,0,23,%f,scen,scen_p)"%p)
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route(g,0,23,%f)"%p)
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route_scen(g,0,23,%f,scen,scen_p,depth=2)"%p)
+for p in [0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route_scen(g,0,23,%f,scen,scen_p,depth=3)"%p)
+for p in [0.99995,0.999975,0.99999]:
+scen_p2= [p*10000 fro p in scen_p]
+scen_p2= [p*10000 for p in scen_p]
+import av_aware
+sum(scen_p)
+for p in [0.99995,0.999975,0.99999]:
+run_f("paths.av_aware_route_scen(g,0,22,0.99,scen,scen_p)")
+run_f("paths.av_aware_route_scen(g,0,22,0.995,scen,scen_p)")
+run_f("paths.av_aware_route_scen(g,0,22,0.998,scen,scen_p)")
+run_f("paths.av_aware_route_scen(g,0,22,0.997,scen,scen_p)")
+run_f("paths.av_aware_route_scen(g,0,22,0.9975,scen,scen_p)")
+run_f("paths.av_aware_route_scen(g,0,22,0.9978,scen,scen_p)")
+run_f("paths.av_aware_route_scen(g,0,22,0.997,scen,scen_p)")
+a
+a[0]*a[3]*a[10]*a[15]*a[18]*a[35]
+e=(a[0]*a[3]*a[10]*a[15]*a[18]*a[35])
+e**2
+1-((1-e)*(1-e))
+1-((1-e)*(1-0.9))
+1-((1-e)*(1-0.95))
+1-((1-e)*(1-0.98))
+1-((1-e)*(1-0.99))
+1-((1-e)*(1-0.995))
+e
+for p in [0.99995,0.999975,0.99999]:
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route(g,0,2,%f)"%p)
+for p in [0.9,0.95,0.99,0.995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route(g,0,2,%f)"%p)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    run_f("paths.av_aware_route(g,0,2,%f)"%p)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+def run_f(expr):
+    start= time.time()
+    eval(expr)
+    end= time.time()
+    return(end-start)
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print run_f("paths.av_aware_route(g,0,3,%f)"%p), 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,3,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,3,%f)"%p)), 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,3,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,4,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,12,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,12,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,17,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,23,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,9,2,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,9,5,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,9,20,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,12,2,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,12,8,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,12,20,%f)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,2,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,4,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,12,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,17,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,123,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,23,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,9,2,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,9,5,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,9,20,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,12,2,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,12,8,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,12,20,%f,scen,scen_p)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,2,%f,scen,scen_p)"%p, depth=2),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,2,%f,scen,scen_p,depth=2)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,4,%f,scen,scen_p,depth=2)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,12,%f,scen,scen_p,depth=2)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route_scen(g,0,17,%f,scen,scen_p,depth=2)"%p),) 
+for p in [0.9,0.95,0.99,0.995,0.9975,0.999,0.99925,0.9995,0.99975,0.9999,0.999925,0.99995,0.999975,0.99999]:
+    print( run_f("paths.av_aware_route(g,0,17,%f,depth=2)"%p),) 
+import readline
+readline.write_history_file('histo.txt')

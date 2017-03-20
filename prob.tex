@@ -1,0 +1,292 @@
+\documentclass[12pt,a4paper,spanish]{report}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+%\usepackage[draft]{graphicx}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{amsfonts}
+%\usepackage{dot2texi}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+   
+\oddsidemargin -0.5cm
+\headsep -1cm
+\textwidth  17 cm
+\textheight  24cm
+\newcommand{\grad}{\hspace{-2mm}$\phantom{a}^{\circ}$}
+
+
+\usepackage{xcolor}
+\definecolor{gray97}{gray}{.90}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+ 
+\usepackage{listings}
+\lstset{ frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0cm,
+     framesep=0pt,
+     rulesep=-0.4pt,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+     stringstyle=\ttfamily,
+     showstringspaces = false,
+     basicstyle=\small\ttfamily,
+     commentstyle=\color{teal},
+     keywordstyle=\textbf,
+     keywordstyle=\color{violet},
+     numbers=left,
+     numbersep=3pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+     basicstyle=\fontsize{9}{11}\selectfont\ttfamily
+   }
+
+
+\title{Ruteo - Capacidad}
+\begin{document}
+\section{Online sla aware route/s assigment}
+			\begin{itemize}
+				\item Minimize:
+					$$  z =  \sum_{(u,v) \in E}{ W_{uv} x_{uv}} $$
+					
+				\item Subject to:
+				
+					\[ \sum_{v | (u,v) \in E }{x^k_{uv} - x^k_{vu}} =
+					\left\{ \begin{array}{ll}
+ 					1 & \mbox{if } u = s \\
+ 					-1 & \mbox{if } u = d \\
+ 					0 & \mbox{otherwise } 
+					\end{array} \right. \quad \quad  \quad  \forall u \in \{0,1,... ,M\} \]
+					
+                    $$ x_{uv} \geq x^k_{uv} + x^k_{vu} \quad \quad \forall k \in 1,2,..,K_{max}, (u,v) \in E$$					
+					
+					$$ s^k_i \geq (1- S_{ij})(x^k_{uv} + x^k_{vu}) \quad \quad \forall k \in 1,2,..,K_{max}, E_j = (u,v) \in E$$
+					
+					$$ s_i \geq 1 + \sum_{k=1}^{K_{max}}{(s^k_i-1)}   \quad \quad \forall i \in \{1,2,...,|\mathbf{S'}|\} $$
+					
+					$$ \sum_{i \in \{1,2,...,|\mathbf{S'}|\} }\pi_i (1 - s_i) = p $$
+					
+					$$ p \geq SLA $$
+					\bigskip
+					$$ x^k_{uv},x_{uv}, s_i^k, s_i \in \{0,1\} $$
+					$$ p \geq 0 $$
+					
+
+		\end{itemize}
+\end{document}
+
+	\section{Offline Route Assignment}
+		
+		\subsubsection*{Given}
+			\begin{itemize}
+				\item $ G = (V,E)$ : Graph that represents the topology.
+				\item $ M = |V| $ : Number of vertices. 
+				\item $ K $ : Number of flows.
+				\item $ W_{ij} $ : Cost of $(i,j)$ edge.
+				\item $ s^k $ : Source vertex $s \in V$ of flow $k$.
+				\item $ d^k $ : Destination vertex $d \in V$ of flow $k$.
+			\end{itemize}
+
+		\subsubsection*{Variables}
+			\begin{itemize}
+				\item $x^k_{ij}$ : Binary, one iff the path of flow $k$ cross $(i,j)$ edge from $i$ to $j$, zero otherwise.
+			\end{itemize}
+
+
+		\subsubsection*{Formulation}
+			\begin{itemize}
+				\item Minimize:
+					$$  z =  \sum_{k=1}^K\sum_{i=1}^{M}{\sum_{j=1}^{M}{W_{ij}  x^k_{ij}}} $$
+					
+				\item Subject to:
+				
+					\[ \sum_{j=1}^{M}{x^k_{ij}} - \sum_{j=1}^{M}{x^k_{ji}} =
+					\left\{ \begin{array}{ll}
+ 					1 & \mbox{if } i = s^k \\
+ 					-1 & \mbox{if } i = d^k \\
+ 					0 & \mbox{otherwise } 
+					\end{array} \right. \quad  \quad  \forall i \in \{1,... ,M\}  \quad \forall k \in \{1,2,...,K\} \]
+					\bigskip
+					$$ x^k_{ij} \in \{0,1\} $$
+
+			\end{itemize}
+
+	\section{Online Route and Capacity Assignment}
+		
+		\subsubsection*{Given}
+			\begin{itemize}
+				\item $ G = (V,E)$ : Graph that represents the topology.
+				\item $ M = |V| $ : Number of vertices. 
+				\item $ W_{ij} $ : Cost of $(i,j)$ edge.
+				\item $ C $ : Capacity demanded.
+				\item $ C_{ij} $ : Capacity of edge $(i,j)$.
+				\item $ s $ : Source vertex $s \in V$.
+				\item $ d $ : Destination vertex $d \in V$.
+			\end{itemize}
+
+		\subsubsection*{Variables}
+			\begin{itemize}
+				\item $x_{ij}$ : Binary, one iff the path cross $(i,j)$ edge from $i$ to $j$, zero otherwise.
+			\end{itemize}
+
+
+		\subsubsection*{Formulation}
+			\begin{itemize}
+				\item Minimize:
+					$$  z =  \sum_{i=1}^{M}{\sum_{j=1}^{M}{ W_{ij} x_{ij}}} $$
+					
+				\item Subject to:
+				
+					\[ \sum_{j=1}^{M}{x_{ij}} - \sum_{j=1}^{M}{x_{ji}} =
+					\left\{ \begin{array}{ll}
+ 					1 & \mbox{if } i = s \\
+ 					-1 & \mbox{if } i = d \\
+ 					0 & \mbox{otherwise } 
+					\end{array} \right. \quad \quad  \quad  \forall i \in \{0,1,... ,M\} \]
+
+					$$ C (x_{ij}+x_{ji}) \leq C_{ij} \quad \quad \forall (i,j) \in E$$
+
+					\bigskip
+					$$ x_{ij} \in \{0,1\} $$
+					
+					
+
+			\end{itemize}
+
+
+	\section{Offline Route Assignment}
+		
+		\subsubsection*{Given}
+			\begin{itemize}
+				\item $ G = (V,E)$ : Graph that represents the topology.
+				\item $ M = |V| $ : Number of vertices. 
+				\item $ K $ : Number of flows.
+				\item $ W_{ij} $ : Cost of $(i,j)$ edge.
+				\item $ C^k $ : Capacity demanded by flow k.
+				\item $ C_{ij} $ : Capacity of edge $(i,j)$.
+				\item $ s^k $ : Source vertex $s \in V$ of flow $k$.
+				\item $ d^k $ : Destination vertex $d \in V$ of flow $k$.
+			\end{itemize}
+
+		\subsubsection*{Variables}
+			\begin{itemize}
+				\item $x^k_{ij}$ : Binary, one iff the path of flow $k$ cross $(i,j)$ edge from $i$ to $j$, zero otherwise.
+			\end{itemize}
+
+
+		\subsubsection*{Formulation}
+			\begin{itemize}
+				\item Minimize:
+					$$  z =  \sum_{k=1}^K\sum_{i=1}^{M}{\sum_{j=1}^{M}{W_{ij}  x^k_{ij}}} $$
+					
+				\item Subject to:
+				
+					\[ \sum_{j=1}^{M}{x^k_{ij}} - \sum_{j=1}^{M}{x^k_{ji}} =
+					\left\{ \begin{array}{ll}
+ 					1 & \mbox{if } i = s^k \\
+ 					-1 & \mbox{if } i = d^k \\
+ 					0 & \mbox{otherwise } 
+					\end{array} \right. \quad  \quad  \forall i \in \{1,... ,M\}  \quad \forall k \in \{1,2,...,K\} \]
+					
+					$$ \sum_{k=1}^K {C^k (x^k_{ij} + x^k_{ji})} \leq C_{ij} \quad \quad \forall (i,j) \in E$$
+					
+					\bigskip
+					$$ x^k_{ij} \in \{0,1\} $$
+
+			\end{itemize}
+
+	\section{Online 1+1 Route and Capacity Assignment}
+		
+		\subsubsection*{Given}
+			\begin{itemize}
+				\item $ G = (V,E)$ : Graph that represents the topology.
+				\item $ M = |V| $ : Number of vertices. 
+				\item $ W_{ij} $ : Cost of $(i,j)$ edge.
+				\item $ C $ : Capacity demanded.
+				\item $ C_{ij} $ : Capacity of edge $(i,j)$.
+				\item $ s $ : Source vertex $s \in V$.
+				\item $ d $ : Destination vertex $d \in V$.
+				\item $ B $ : A big number $(B \geq \sum^{ij}{W_{ij}})$
+			\end{itemize}
+
+		\subsubsection*{Variables}
+			\begin{itemize}
+				\item $x^k_{ij}$ : Integer, the number of paths from $s$ to $d$ that cross edge $(i,j)$ from $i$ to $j$.
+			\end{itemize}
+
+
+		\subsubsection*{Formulation}
+			\begin{itemize}
+				\item Minimize:
+					$$  z = \sum_{i=1}^{M}{\sum_{j=1}^{M}{ B j_{ij}}} + \sum_{i=1}^{M}{\sum_{j=1}^{M}{ W_{ij} x_{ij}}} $$
+					
+				\item Subject to:
+				
+					\[ \sum_{j=1}^{M}{x_{ij}} - \sum_{j=1}^{M}{x_{ji}} =
+					\left\{ \begin{array}{ll}
+ 					2 & \mbox{if } i = s \\
+ 					-2 & \mbox{if } i = d \\
+ 					0 & \mbox{otherwise } 
+					\end{array} \right. \quad \quad  \quad  \forall i \in \{0,1,... ,M\} \]
+
+					$$ C (x_{ij} + x_{ji}) \leq C_{ij} \quad \quad \forall (i,j) \in E$$
+                    $$ j_{ij} \geq x_{ij} + x_{ji} - 1 \quad \quad \forall (i,j) \in E$$
+ 
+					\bigskip
+					$$ x_{ij} \in \{0,1,2\} $$
+					$$ j_{ij} \in \{0,1\} $$
+
+			\end{itemize}
+
+
+	\section{Offline 1+1 Route Assignment}
+		
+		\subsubsection*{Given}
+			\begin{itemize}
+				\item $ G = (V,E)$ : Graph that represents the topology.
+				\item $ M = |V| $ : Number of vertices. 
+				\item $ K $ : Number of flows.
+				\item $ W_{ij} $ : Cost of $(i,j)$ edge.
+				\item $ C^k $ : Capacity demanded by flow k.
+				\item $ C_{ij} $ : Capacity of edge $(i,j)$.
+				\item $ s^k $ : Source vertex $s \in V$ of flow $k$.
+				\item $ d^k $ : Destination vertex $d \in V$ of flow $k$.
+				\item $ B $ : A big number $(B \geq K \sum^{ij}{W_{ij}})$
+			\end{itemize}
+
+		\subsubsection*{Variables}
+			\begin{itemize}
+				\item $x^k_{ij}$ : Integer, the number of paths from $s^k$ to $d^k$ that cross edge $(i,j)$ from $i$ to $j$.
+			\end{itemize}
+
+
+		\subsubsection*{Formulation}
+			\begin{itemize}
+				\item Minimize: 
+					$$  z = \sum_{k=1}^K{\sum^{(i,j) \in E}{B  j^k_{ij}}} +                   
+					         \sum_{k=1}^K\sum_{i=1}^{M}{\sum_{j=1}^{M}{W_{ij}  x^k_{ij}}} $$
+					
+				\item Subject to:
+				
+					\[ \sum_{j=1}^{M}{x^k_{ij}} - \sum_{j=1}^{M}{x^k_{ji}} =
+					\left\{ \begin{array}{ll}
+ 					1 & \mbox{if } i = s^k \\
+ 					-1 & \mbox{if } i = d^k \\
+ 					0 & \mbox{otherwise } 
+					\end{array} \right. \quad  \quad  \forall i \in \{1,... ,M\}  \quad \forall k \in \{1,2,...,K\} \]
+					
+					$$ \sum_{k=1}^K {C^k (x^k_{ij}+x^k_{ji})} \leq C_{ij} \quad \quad \forall (i,j) \in E $$
+					$$ j^k_{ij} \geq x^k_{ij} + x^k_{ji} - 1  \quad \quad \forall (i,j) \in E$$
+					
+					\bigskip
+					$$ x^k_{ij} \in \{0,1,2\} $$
+
+			\end{itemize}
+
